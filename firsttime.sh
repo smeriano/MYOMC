@@ -7,7 +7,7 @@ TOPDIR=$PWD
 #CAMPAIGNS=( "RunIIFall18GS" "RunIIFall18GSBParking" "RunIIFall18wmLHEGS" )
 # CAMPAIGNS=( "RunIISummer20UL16wmLHE" "RunIISummer20UL16APVwmLHE" "RunIISummer20UL17wmLHE" "RunIISummer20UL18wmLHE" "NANOGEN" )
 #CAMPAIGNS=( "Run3Summer22wmLHE" "Run3Summer22EEwmLHE" "Run3Summer23wmLHE" "Run3Summer23BPixwmLHE" )
-CAMPAIGNS=( "Run3Summer23GS" )
+CAMPAIGNS=( "Run3Summer23wmLHE" )
 #CAMPAIGNS=( "RunIISummer20UL16wmLHE_pfnano" "RunIISummer20UL16APVwmLHE_pfnano" "RunIISummer20UL17wmLHE_pfnano" "RunIISummer20UL18wmLHE_pfnano" "NANOGEN" )
 
 #check is the host is cmslpc or lxplus

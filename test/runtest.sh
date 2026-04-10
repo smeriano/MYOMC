@@ -11,8 +11,8 @@ if [ -z ${QUEUE} ]; then
     QUEUE=local
 fi
 
-#CAMPAIGNS=( "RunIISummer20UL16wmLHE" "RunIISummer20UL16APVwmLHE" "RunIISummer20UL17wmLHE" "RunIISummer20UL18wmLHE" )
-CAMPAIGNS=( "RunIISummer20UL18wmLHE" )
+#CAMPAIGNS=( "RunIISummer20UL16wmLHE" "RunIISummer20UL16APVwmLHE" "RunIISummer20UL17wmLHE" "Run3Summer23wmLHE" )
+CAMPAIGNS=( "Run3Summer23wmLHE" )
 
 if [ "$QUEUE" == "condor" ]; then
     for CAMPAIGN in "${CAMPAIGNS[@]}"; do
