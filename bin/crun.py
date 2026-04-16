@@ -105,17 +105,26 @@ if __name__ == "__main__":
 
     # For args.outEOS, make sure it's formatted correctly, and make sure output dir exists
     if args.outEOS:
-        if args.outEOS[:6] != "/store" and args.outEOS[:5] != "/user":
-            raise ValueError("Argument --outEOS must start with /store or /user (you specified --outEOS {})".format(args.outEOS))
-        #if not os.path.isdir("/eos/uscms/{}".format(args.outEOS)):
-        #    raise ValueError("Output EOS directory does not exist! (you specified --outEOS {}_".format(args.outEOS))
-        if not args.outEOS[-1] == "/":
+        if not (args.outEOS.startswith("/store") or args.outEOS.startswith("/user") or args.outEOS.startswith("/eos/user")):
+            raise ValueError(
+                "Argument --outEOS must start with /store, /user, or /eos/user "
+                f"(you specified --outEOS {args.outEOS})"
+            )
+
+        if not args.outEOS.endswith("/"):
             args.outEOS += "/"
 
+        # Normalise lxplus EOSUSER paths
+        if host == "lxplus":
+            if args.outEOS.startswith("/user/"):
+                args.outEOS = "/eos" + args.outEOS
+            elif args.outEOS.startswith("/eos/user/"):
+                pass
+
         # Determine eos prefix
-        if args.outEOS[:6] == "/store" and host == "lxplus":
+        if args.outEOS.startswith("/store") and host == "lxplus":
             eos_prefix = "root://eoscms.cern.ch/"
-        elif args.outEOS[:5] == "/user" and host == "lxplus":
+        elif args.outEOS.startswith("/eos/user") and host == "lxplus":
             eos_prefix = "root://eosuser.cern.ch/"
         elif host == "cmslpc":
             eos_prefix = "root://cmseos.fnal.gov"
