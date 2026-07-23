@@ -10,19 +10,20 @@ fi
 # NJOBS=100
 
 # Change seed offest if you dont want to run on the same files!
-SEED_OFFSET=100
-NJOBS=200
+SEED_OFFSET=10
+NJOBS=1
 NEVENTS_PER_JOB=100
 
 CAMPAIGN_NAMES=("Run3Summer23wmLHE")
 
 FRAGMENT_FILES=(
-    "fragment_ttHH_2B2Tau_SM.py"
-    "fragment_ttHH_2B2Tau_opt_0.py"
-    "fragment_ttHH_2B2Tau_opt_1.py"
-    "fragment_ttHH_2B2Tau_opt_2.py"
-    "fragment_ttHH_2B2Tau_opt_3.py"
-    "fragment_ttHH_2B2Tau_opt_4.py"
+    "fragment_ggHHH_kt_1p0_k3_8p164_k4_m52p932_Run3Summer24NanoAODv15_1.py"
+    # "fragment_ttHH_2B2Tau_SM.py"
+    # "fragment_ttHH_2B2Tau_opt_0.py"
+    # "fragment_ttHH_2B2Tau_opt_1.py"
+    # "fragment_ttHH_2B2Tau_opt_2.py"
+    # "fragment_ttHH_2B2Tau_opt_3.py"
+    # "fragment_ttHH_2B2Tau_opt_4.py"
 )
 
 if [ "${QUEUE}" == "condor" ]; then
